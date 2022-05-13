@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selected Input Box</title>
+  </head>
+  <body>
+    <div class="mdc-text-field mdc-text-field--with-leading-icon">
+      <label class="mdc-floating-label margin-btm-8"> Mobile Number </label>
+      <div id="mobile_number_error_wrapper">
+        <div class="select-box-container margin-0">
+          <select id="demo-htmlselect" class="select-box" onchange="validation()">
+            <!-- <option value="0">Country Code</option> -->
+            <option value="0">+971</option>
+            <option value="1" selected>+91</option>
+          </select>
+          <div class="select-input-container">
+            <span class="select-border"></span>
+            <input
+              tabindex="0"
+              id="user.attributes.mobile_number"
+              class="mdc-text-field__input input_box"
+              name="user.attributes.mobile_number"
+              placeholder="Mobile Number"
+              type="text"
+              autofocus
+              autocomplete="off"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mdc-text-field mdc-text-field--with-leading-icon" id="nationality_error_wrapper" name="error_wrapper">
+        <label for="username" class="mdc-floating-label  margin-btm-8"> Nationality </label>
+        <div>
+            <div class="margin-btm-24 eye_icon_wrapper">
+                <select id="nationality" name="nationality" class='select-box-nationality' >
+                    <option value='0'>Select Nationality</option>
+                    <option value='1' >Dubai</option>
+                    <option value='2'>India</option>
+                </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function validation(){
+            countryCode = document.getElementById('demo-htmlselect');
+            nationality = document.getElementById('nationality');
+            if(countryCode.value === '1'){
+                document.getElementById('nationality').value = '2';
+            }else{
+                 document.getElementById('nationality').value = '1';
+            } 
+        }
+    </script>
+  </body>
+</html>

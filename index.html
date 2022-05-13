@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Code</title>
+  </head>
+  <body>
+    <h3>See in console</h3>
+    <!-- <script src="JS/index.js"></script> -->
+    <!-- <script src="JS/index.js"></script> -->
+    <input
+      type="date"
+      min=""
+      id="myInput"
+      required
+      pattern="\d{2}-\d{2}-\d{2}"
+      max
+    />
+    <script>
+      var currentDate = new Date();
+
+      var month = currentDate.getMonth() + 1;
+      var day = currentDate.getDate() + 2;
+      var year = currentDate.getFullYear();
+
+      if (month < 10) {
+        month = "0" + month.toString();
+        console.log("Month  ", month);
+      } else if (day < 10) {
+        day = "0" + day.toString();
+        // console.log("Day  ", day.toString());
+      }
+
+      var maxDate = year + "-" + month + "-" + day;
+      document.querySelector("#myInput").setAttribute("max", maxDate);
+    </script>
+  </body>
+</html>
